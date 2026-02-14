@@ -119,7 +119,7 @@ export function ColophonSection() {
         <div className="col-span-2">
           <h4 className="font-mono text-[9px] uppercase tracking-[0.3em] text-accent mb-6">SPECIAL THANKS</h4>
           <ul className="space-y-2">
-            <li className="font-mono text-xs text-foreground/80">Narendra Modi</li>
+            <li className="font-mono text-xs text-foreground/80">Harish Sharma Sir</li>
             <li className="font-mono text-xs text-foreground/80">Open Source Community</li>
             <li className="font-mono text-xs text-foreground/80">Vercel</li>
             <li className="font-mono text-xs text-foreground/80">Our Early Reviewers</li>
