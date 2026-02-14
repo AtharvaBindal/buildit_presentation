@@ -192,8 +192,8 @@ function SplitFlapChar({ char, index, animationKey, skipEntrance, speed, playCli
 
   const tileDelay = 0.15 * index
 
-  const bgColor = isSettled ? "hsl(0, 0%, 0%)" : "rgba(249, 115, 22, 0.2)"
-  const textColor = isSettled ? (settledColor || "#ffffff") : "#f97316"
+  const bgColor = isSettled ? "hsl(0, 0%, 0%)" : "rgba(168, 85, 247, 0.2)" // Purple-500 with opacity
+  const textColor = isSettled ? (settledColor || "#ffffff") : "#a855f7" // Purple-500
 
   useEffect(() => {
     if (intervalRef.current) clearInterval(intervalRef.current)

@@ -30,7 +30,7 @@ export function BackgroundBlobs() {
 
         // Parallax effect for the container
         gsap.to(containerRef.current, {
-            y: "20%", // Move slightly down as we scroll down to create depth
+            y: "50%", // Increased movement for more noticeable parallax
             ease: "none",
             scrollTrigger: {
                 trigger: document.body,
