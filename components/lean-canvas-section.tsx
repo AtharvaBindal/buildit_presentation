@@ -529,7 +529,7 @@ export function LeanCanvasSection() {
         </div>
 
         {/* Row 3: Bottom Row - Cost Structure & Revenue Streams */}
-        <div className="lean-card md:col-span-2.5 flex flex-col bg-card/20 border border-white/5 rounded-lg overflow-hidden backdrop-blur-sm hover:border-accent/30 hover:bg-card/30 transition-all duration-300 group">
+        <div className="lean-card md:col-span-2 flex flex-col bg-card/20 border border-white/5 rounded-lg overflow-hidden backdrop-blur-sm hover:border-accent/30 hover:bg-card/30 transition-all duration-300 group">
           <div className="p-3 border-b border-white/5 bg-white/5">
             <h3 className="font-[var(--font-bebas)] text-lg md:text-xl tracking-wide text-foreground group-hover:text-accent transition-colors">
               Cost Structure
@@ -554,7 +554,7 @@ export function LeanCanvasSection() {
           </div>
         </div>
 
-        <div className="lean-card md:col-span-2.5 flex flex-col bg-card/20 border border-white/5 rounded-lg overflow-hidden backdrop-blur-sm hover:border-accent/30 hover:bg-card/30 transition-all duration-300 group">
+        <div className="lean-card md:col-span-3 flex flex-col bg-card/20 border border-white/5 rounded-lg overflow-hidden backdrop-blur-sm hover:border-accent/30 hover:bg-card/30 transition-all duration-300 group">
           <div className="p-3 border-b border-white/5 bg-white/5">
             <h3 className="font-[var(--font-bebas)] text-lg md:text-xl tracking-wide text-foreground group-hover:text-accent transition-colors">
               Revenue Streams
