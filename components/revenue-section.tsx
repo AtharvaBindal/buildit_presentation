@@ -15,20 +15,16 @@ gsap.registerPlugin(ScrollTrigger)
 /** Your revenue ideas. Each item becomes one card in the horizontal scroll. */
 const revenueModels = [
   {
-    title: "Project-Based Commission",
-    description: "The platform earns a commission from the project enrollment fee paid by learners.",
+    title: "COMMISSION",
+    description: "5% transaction fee on every item sold in the Night Market or gig completed.",
   },
   {
-    title: "Pro Subscription (AI-Powered Features)",
-    description: "Users can upgrade to a premium plan to access AI-assisted learning tools, code insights, and progress analytics.",
+    title: "FREEMIUM",
+    description: "Free for students. Premium subscription for Recruiters and Student Clubs to unlock analytics.",
   },
   {
-    title: "Paid Mentorship Support",
-    description: "Learners can opt for additional one-on-one or on-demand mentor assistance for specific technical challenges.",
-  },
-  {
-    title: "Micro-Revenue Streams",
-    description: "Small-value earnings generated through add-ons such as certifications, advanced project access, and premium learning tools.",
+    title: "DATA INSIGHTS",
+    description: "Aggregated, anonymized behavior trends sold to Campus Administration for better decision making.",
   },
 ]
 
@@ -136,9 +132,9 @@ export function RevenueSection() {
 
       {/* Section header — id="revenue" is used by the side nav. */}
       <div ref={headerRef} className="mb-16 pr-6 md:pr-12">
-        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">04 / Revenue</span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">05 / BUSINESS</span>
         <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">
-          <span className="text-accent">REVENUE</span> MODEL
+          THE <span className="text-accent">BUSINESS</span> SIDE
         </h2>
       </div>
 
@@ -155,9 +151,14 @@ export function RevenueSection() {
           <RevenueCard key={index} model={model} index={index} />
         ))}
       </div>
-    </section>
+
+
+
+    </section >
   )
 }
+
+
 
 /** One revenue card. Same paper-card style as SignalCard; change title/description in revenueModels. */
 function RevenueCard({

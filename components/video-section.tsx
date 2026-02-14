@@ -59,7 +59,7 @@ export function VideoSection() {
     <section id="video" ref={sectionRef} className="relative py-32 pl-6 md:pl-28">
       {/* Section header — id="video" is used by the side nav. */}
       <div ref={headerRef} className="mb-12 pr-6 md:pr-12">
-        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">02.5 / Video</span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">04 / DEMO</span>
         <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">
           PROJECT REVIEW <span className="text-accent">VIDEO</span>
         </h2>
@@ -73,13 +73,20 @@ export function VideoSection() {
       </div>
 
       {/* Video placeholder — replace this whole div with an <iframe> when you have your video embed URL. */}
+      {/* Video placeholder — replace this whole div with an <iframe> when you have your video embed URL. */}
       <div
         ref={videoWrapperRef}
-        className="relative w-full max-w-4xl pr-6 md:pr-12 aspect-video bg-card border border-border/50 flex items-center justify-center"
+        className="relative w-full max-w-4xl aspect-video bg-black rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(168,85,247,0.2)] border border-white/10"
       >
-        <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-          Video placeholder — add your review video embed URL here
-        </p>
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/I1RC_rZanpk"
+          title="UniVerse Project Review"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          className="absolute inset-0"
+        />
       </div>
     </section>
   )

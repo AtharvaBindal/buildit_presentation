@@ -7,7 +7,7 @@
  * browser; Next.js needs to know this isn’t just static HTML.
  */
 import { useEffect, useRef } from "react"
-import { ScrambleTextOnHover } from "@/components/scramble-text"
+import { ScrambleText, ScrambleTextOnHover } from "@/components/scramble-text"
 import { SplitFlapText, SplitFlapMuteToggle, SplitFlapAudioProvider } from "@/components/split-flap-text"
 import { AnimatedNoise } from "@/components/animated-noise"
 import { BitmapChevron } from "@/components/bitmap-chevron"
@@ -74,7 +74,7 @@ export function HeroSection() {
         {/* Wraps the flip-board title and mute button so they can share audio state. */}
         <SplitFlapAudioProvider>
           <div className="relative">
-            <SplitFlapText text="BUILDIT" speed={80} />
+            <SplitFlapText text="UNIVERSE" speed={80} />
             <div className="mt-4">
               <SplitFlapMuteToggle />
             </div>
@@ -82,13 +82,13 @@ export function HeroSection() {
         </SplitFlapAudioProvider>
 
         {/* Tagline — change this to match your project. */}
-        <h2 className="font-[var(--font-bebas)] text-muted-foreground/60 text-[clamp(1rem,3vw,2rem)] mt-4 tracking-wide">
-          BUILD SKILLS. BUILD PROJECTS. BUILD PROOF.
+        <h2 className="font-[var(--font-bebas)] text-muted-foreground/80 text-[clamp(1rem,3vw,2rem)] mt-4 tracking-wide">
+          <ScrambleText text="THE OPERATING SYSTEM FOR THE MODERN DIGITAL CAMPUS" />
         </h2>
 
         {/* Short description. Replace with your own pitch. */}
         <p className="mt-12 max-w-lg font-mono text-sm text-muted-foreground leading-relaxed text-justify">
-          This is the template where you need to tinker around, change texts as per your project. Problems, solution, project review video, MVP (at least 4), revenue model if any, credits, then add a feedback form. Fix errors for extra points.
+          A closed-loop digital ecosystem integrating Academic Management, Community Engagement, Welfare, and Commerce.
         </p>
 
         {/* Buttons: #signals scrolls to the Problems section on the same page; /lean-canvas is another route. */}

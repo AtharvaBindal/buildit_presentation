@@ -15,51 +15,51 @@ gsap.registerPlugin(ScrollTrigger)
 /** Your solution steps. "span" controls grid cell size (e.g. col-span-2 row-span-2 for a big card). */
 const experiments = [
   {
-    title: "Project Posted",
-    medium: "Step 1",
-    description: "Experienced developers publish real-world project ideas with clear objectives.",
+    title: "DASHBOARD COMMAND",
+    medium: "09:00 AM",
+    description: "Start the day. Check attendance, upcoming classes, and pending tasks in one unified view.",
     span: "col-span-2 row-span-2",
   },
   {
-    title: "Learner Joins",
-    medium: "Step 2",
-    description: "Students enroll in a project based on their interest and skill level.",
+    title: "ATTENDANCE CHECK",
+    medium: "10:30 AM",
+    description: "Thinking of skipping? Bunk Manager calculates your safe margin instantly.",
     span: "col-span-1 row-span-1",
   },
   {
-    title: "Learning Path Assigned",
-    medium: "Step 3",
-    description: "A structured roadmap is provided to guide what needs to be learned and built.",
+    title: "WEEKEND PLANS",
+    medium: "01:00 PM",
+    description: "Coordinate a trip with friends. Polls, budget splitting, and permissions sorted.",
     span: "col-span-1 row-span-2",
   },
   {
-    title: "Project Development",
-    medium: "Step 4",
-    description: "Learners work on tasks by writing and implementing code themselves.",
+    title: "BUY & SELL",
+    medium: "04:00 PM",
+    description: "Night Market. Sell your old drafter or find a cycle from a verified senior.",
     span: "col-span-1 row-span-1",
   },
   {
-    title: "Guidance & Review",
-    medium: "Step 5",
-    description: "Seniors review progress and provide direction where required.",
+    title: "SOCIAL SYNC",
+    medium: "06:00 PM",
+    description: "Club Hub. Discover the Hackathon tonight and register with one tap.",
     span: "col-span-2 row-span-1",
   },
   {
-    title: "Skill Validation",
-    medium: "Step 6",
-    description: "Skills are evaluated based on actual project contributions.",
+    title: "SKILL BUILD",
+    medium: "09:00 PM",
+    description: "Join a project. Commit code. Your activity automatically verifies your skills.",
     span: "col-span-1 row-span-1",
   },
   {
-    title: "Portfolio Creation",
-    medium: "Step 7",
-    description: "Completed work is added as verified project experience.",
+    title: "CV AUTO-UPDATE",
+    medium: "11:00 PM",
+    description: "Your profile updates itself based on what you built and achieved today.",
     span: "col-span-1 row-span-1",
   },
   {
-    title: "Growth & Opportunities",
-    medium: "Step 8",
-    description: "Skilled users unlock advanced projects and career opportunities.",
+    title: "ALUMNI CONNECT",
+    medium: "ANYTIME",
+    description: "Stuck? Reach out to an alum who took the same path.",
     span: "col-span-1 row-span-1",
   },
 ]
@@ -130,7 +130,7 @@ export function WorkSection() {
 
     const cycleSteps = () => {
       if (!isActive) return
-      
+
       if (currentStep < experiments.length) {
         // Highlight current step
         setHighlightedStep(currentStep)
@@ -194,9 +194,9 @@ export function WorkSection() {
       {/* Section header — id="work" is used by the side nav to scroll here. */}
       <div ref={headerRef} className="mb-16 flex items-end justify-between">
         <div>
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">02 / SOLUTION</span>
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">03 / USER JOURNEY</span>
           <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">
-            WHAT WE BELIEVE WOULD <span className="text-accent">SOLVE</span> THESE <span className="text-red-500">PROBLEMS</span>
+            A SEAMLESS <span className="text-accent">CAMPUS LIFE</span>
           </h2>
         </div>
         <p className="hidden md:block max-w-xs font-mono text-xs text-muted-foreground text-right leading-relaxed">

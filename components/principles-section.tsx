@@ -22,51 +22,46 @@ export function PrinciplesSection() {
     {
       number: "01",
       titleParts: [
-        { text: "MVP 1: Project-Based ", highlight: false },
-        { text: "LEARNING", highlight: true },
-        { text: " Core", highlight: false },
+        { text: "CORE 1: ", highlight: false },
+        { text: "DASHBOARD", highlight: true },
       ],
-      description: "Project listing by mentors • Student project enrollment • Basic task structure • GitHub-based submissions • Manual review & feedback",
+      description: "Interactive Bento Grid providing a unified view of attendance, events, and tasks.",
       align: "left",
     },
     {
       number: "02",
       titleParts: [
-        { text: "MVP 2: ", highlight: false },
-        { text: "MENTORSHIP", highlight: true },
-        { text: " & Progress Tracking", highlight: false },
+        { text: "CORE 2: ", highlight: false },
+        { text: "ACADEMICS", highlight: true },
       ],
-      description: "Mentor–student assignment • Weekly progress check-ins • Simple skill tagging • Completion status tracking",
+      description: "'Bunk Manager' with traffic light system for attendance tracking and academic calendar.",
       align: "right",
     },
     {
       number: "03",
       titleParts: [
-        { text: "MVP 3: ", highlight: false },
-        { text: "PORTFOLIO", highlight: true },
-        { text: " Generation", highlight: false },
+        { text: "CORE 3: ", highlight: false },
+        { text: "WELFARE", highlight: true },
       ],
-      description: "Auto-generated project portfolio • Tech stack display • Contribution summary • Shareable profile link",
+      description: "Trip Planner for secure travel and Anonymous Grievances for student support.",
       align: "left",
     },
     {
       number: "04",
       titleParts: [
-        { text: "MVP 4: ", highlight: false },
-        { text: "RECRUITER", highlight: true },
-        { text: " View (Lite Version)", highlight: false },
+        { text: "CORE 4: ", highlight: false },
+        { text: "ECONOMY", highlight: true },
       ],
-      description: "View verified projects • Skill-based filtering • Contact / shortlist option",
+      description: "'Night Market' for verified P2P buying/selling with campus-specific trust scores.",
       align: "right",
     },
     {
       number: "05",
       titleParts: [
-        { text: "MVP 5: ", highlight: false },
-        { text: "MONETIZATION", highlight: true },
-        { text: " Layer", highlight: false },
+        { text: "CORE 5: ", highlight: false },
+        { text: "SOCIAL", highlight: true },
       ],
-      description: "Project-based enrollment fee • Mentor payout system • Basic admin controls",
+      description: "Club Hub for event discovery and Social Graph to connect with peers and alumni.",
       align: "left",
     },
   ]
@@ -118,8 +113,8 @@ export function PrinciplesSection() {
     <section ref={sectionRef} id="principles" className="relative py-32 pl-6 md:pl-28 pr-6 md:pr-12">
       {/* Section header — id="principles" is used by the side nav for "MVP". */}
       <div ref={headerRef} className="mb-24">
-        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">03 / MVP</span>
-        <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">MINIMUM VIABLE PRODUCT (MVP)</h2>
+        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">02 / CORE MODULES</span>
+        <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">CORE MODULES (<span className="text-accent">MVP</span>)</h2>
       </div>
 
       {/* Staggered MVP blocks — ref used by GSAP to find and animate each article. */}
@@ -127,9 +122,8 @@ export function PrinciplesSection() {
         {mvps.map((mvp, index) => (
           <article
             key={index}
-            className={`flex flex-col ${
-              mvp.align === "right" ? "items-end text-right" : "items-start text-left"
-            }`}
+            className={`flex flex-col ${mvp.align === "right" ? "items-end text-right" : "items-start text-left"
+              }`}
           >
             {/* Annotation label — e.g. "01 / MVP". */}
             <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-4">

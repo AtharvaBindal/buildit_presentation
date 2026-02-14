@@ -1,26 +1,18 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { IBM_Plex_Sans, IBM_Plex_Mono, Bebas_Neue } from "next/font/google"
+import { Bebas_Neue } from "next/font/google"
+import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { SmoothScroll } from "@/components/smooth-scroll"
+import { BackgroundBlobs } from "@/components/background-blobs"
 import "./globals.css"
 
-const ibmPlexSans = IBM_Plex_Sans({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-ibm-plex-sans",
-})
-const ibmPlexMono = IBM_Plex_Mono({
-  weight: ["400", "500"],
-  subsets: ["latin"],
-  variable: "--font-ibm-plex-mono",
-})
 const bebasNeue = Bebas_Neue({ weight: "400", subsets: ["latin"], variable: "--font-bebas" })
 
 export const metadata: Metadata = {
-  title: "BUILDIT — Build Skills. Build Projects. Build Proof.",
+  title: "UNIVERSE — The Operating System for the Modern Digital Campus",
   description:
-    "Template: tinker and change texts as per your project. Includes problems, solution, project review video, MVP (at least 4), revenue model, credits, and feedback form.",
+    "A closed-loop digital ecosystem integrating Academic Management, Community Engagement, Welfare, and Commerce.",
 }
 
 export default function RootLayout({
@@ -31,8 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark bg-background">
       <body
-        className={`${ibmPlexSans.variable} ${bebasNeue.variable} ${ibmPlexMono.variable} font-sans antialiased overflow-x-hidden`}
+        className={`${GeistMono.variable} ${bebasNeue.variable} font-mono antialiased overflow-x-hidden`}
       >
+        <BackgroundBlobs />
         <div className="noise-overlay" aria-hidden="true" />
         <SmoothScroll>{children}</SmoothScroll>
         <Analytics />
@@ -40,3 +33,4 @@ export default function RootLayout({
     </html>
   )
 }
+

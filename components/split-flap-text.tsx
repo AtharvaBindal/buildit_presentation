@@ -160,6 +160,7 @@ function SplitFlapTextInner({ text, className = "", speed = 50 }: SplitFlapTextP
           skipEntrance={hasInitialized}
           speed={speed}
           playClick={audio?.playClick}
+          settledColor={char.toUpperCase() === "U" && index === 0 ? "var(--primary)" : undefined}
         />
       ))}
     </div>
@@ -177,9 +178,10 @@ interface SplitFlapCharProps {
   skipEntrance: boolean
   speed: number
   playClick?: () => void
+  settledColor?: string
 }
 
-function SplitFlapChar({ char, index, animationKey, skipEntrance, speed, playClick }: SplitFlapCharProps) {
+function SplitFlapChar({ char, index, animationKey, skipEntrance, speed, playClick, settledColor }: SplitFlapCharProps) {
   const displayChar = CHARSET.includes(char) ? char : " "
   const isSpace = char === " "
   const [currentChar, setCurrentChar] = useState(skipEntrance ? displayChar : " ")
@@ -190,7 +192,7 @@ function SplitFlapChar({ char, index, animationKey, skipEntrance, speed, playCli
   const tileDelay = 0.15 * index
 
   const bgColor = isSettled ? "hsl(0, 0%, 0%)" : "rgba(249, 115, 22, 0.2)"
-  const textColor = isSettled ? "#ffffff" : "#f97316"
+  const textColor = isSettled ? (settledColor || "#ffffff") : "#f97316"
 
   useEffect(() => {
     if (intervalRef.current) clearInterval(intervalRef.current)

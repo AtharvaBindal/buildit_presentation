@@ -14,51 +14,46 @@ gsap.registerPlugin(ScrollTrigger)
 /** Your problem statements. Each object becomes one card. Change title and note to match your project. */
 const signals = [
   {
-    date: "",
-    title: "Learning Without Doing",
-    note: "Students watch hours of tutorials but freeze the moment they have to build something on their own.",
+    title: "Fragmented Academics",
+    note: "Clunky legacy ERPs, scattered notes, and no real-time attendance tracking make academic life a shuffle.",
   },
   {
-    date: "",
-    title: "Tutorial Hell Is the New Degree",
-    note: "Most learners collect courses instead of skills, mistaking progress for productivity.",
+    title: "Communication Chaos",
+    note: "WhatsApp spam and endless groups lead to information overload and missed critical deadlines.",
   },
   {
-    date: "",
-    title: "Resumes Lie, Code Doesn't",
-    note: "Anyone can write \"proficient in X,\" but very few can actually prove it.",
+    title: "Unsafe Commerce",
+    note: "Buying and selling on Instagram or OLX is risky, unverified, and lacks campus-specific trust.",
   },
   {
-    date: "",
-    title: "Mentorship Is Either Missing or Useless",
-    note: "Students either get no guidance or get spoon-fed without real learning.",
+    title: "Alumni Disconnect",
+    note: "No structured way to connect with seniors or alumni for mentorship, creating a guidance void.",
   },
   {
-    date: "",
-    title: "Hiring Is a Guessing Game",
-    note: "Companies are forced to trust resumes and interviews instead of real work.",
+    title: "Mental Health Isolation",
+    note: "Lack of anonymous support systems or easy grievance redressal leaves students feeling unheard.",
   },
   {
-    date: "",
-    title: "Talent Exists, Direction Doesn't",
-    note: "Capable students and graduates have skills—but no clear path to apply or showcase them.",
+    title: "Event Discovery FOMO",
+    note: "Fragmented event promotions mean students often miss out on club activities and workshops.",
+  },
+  {
+    title: "Skill Gap Reality",
+    note: "Students learn theory but lack the platform to build and showcase real-world projects.",
+  },
+  {
+    title: "Bureaucratic Friction",
+    note: "Manual paperwork for simple approvals, gate passes, and leaves wastes valuable time.",
   },
 ]
 
 export function SignalsSection() {
-  const scrollRef = useRef<HTMLDivElement>(null)
   const sectionRef = useRef<HTMLElement>(null)
   const headerRef = useRef<HTMLDivElement>(null)
   const cardsRef = useRef<HTMLDivElement>(null)
   const cursorRef = useRef<HTMLDivElement>(null)
-  /** useState: when this changes, React re-renders and the cursor dot shows/hides. */
   const [isHovering, setIsHovering] = useState(false)
 
-  /**
-   * First useEffect: custom cursor. When the mouse moves over this section we move a
-   * small circle to follow it. We add event listeners in the effect and remove them
-   * in the return (cleanup) so we don’t leak listeners when the component unmounts.
-   */
   useEffect(() => {
     if (!sectionRef.current || !cursorRef.current) return
 
@@ -92,16 +87,10 @@ export function SignalsSection() {
     }
   }, [])
 
-  /**
-   * Second useEffect: scroll animations. When you scroll this section into view,
-   * the header slides in from the left and the cards stagger in. GSAP ScrollTrigger
-   * handles the "when in view" part; we clean up with ctx.revert() on unmount.
-   */
   useEffect(() => {
     if (!sectionRef.current || !headerRef.current || !cardsRef.current) return
 
     const ctx = gsap.context(() => {
-      /* Header slide in from left */
       gsap.fromTo(
         headerRef.current,
         { x: -60, opacity: 0 },
@@ -122,16 +111,16 @@ export function SignalsSection() {
       if (cards) {
         gsap.fromTo(
           cards,
-          { x: -100, opacity: 0 },
+          { y: 50, opacity: 0 },
           {
-            x: 0,
+            y: 0,
             opacity: 1,
             duration: 0.8,
-            stagger: 0.2,
+            stagger: 0.1,
             ease: "power3.out",
             scrollTrigger: {
               trigger: cardsRef.current,
-              start: "top 90%",
+              start: "top 85%",
               toggleActions: "play none none reverse",
             },
           },
@@ -143,39 +132,49 @@ export function SignalsSection() {
   }, [])
 
   return (
-    <section id="signals" ref={sectionRef} className="relative py-32 pl-6 md:pl-28">
-      {/* The dot that follows the mouse in this section; pointer-events-none so it doesn’t block clicks. */}
+    <section id="signals" ref={sectionRef} className="relative py-32 px-6 md:px-28 min-h-screen">
       <div
         ref={cursorRef}
         className={cn(
           "pointer-events-none absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 z-50",
-          "w-12 h-12 rounded-full border-2 border-accent bg-accent",
+          "w-12 h-12 rounded-full border-2 border-accent bg-accent/20 blur-sm",
           "transition-opacity duration-300",
           isHovering ? "opacity-100" : "opacity-0",
         )}
       />
 
-      {/* Section header — ref used by GSAP for the slide-in animation. */}
-      <div ref={headerRef} className="mb-16 pr-6 md:pr-12">
-        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">01 / PROBLEM IDENTIFICATION</span>
+      <div ref={headerRef} className="mb-16">
+        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">01 / SIGNAL DETECTION</span>
         <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">
-          <span className="text-red-500">PROBLEMS</span> BEING ADDRESSED
+          THE PROBLEM OF <span className="text-accent">FRAGMENTATION</span>
         </h2>
       </div>
 
-      {/* Horizontal scroll container — same div is used as scrollRef and cardsRef so we can animate the cards. */}
-      <div
-        ref={(el) => {
-          scrollRef.current = el
-          cardsRef.current = el
-        }}
-        className="flex gap-8 overflow-x-auto pb-8 pr-12 scrollbar-hide"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-      >
-        {/* .map() loops over signals and renders one SignalCard per item. key helps React track which item is which. */}
-        {signals.map((signal, index) => (
-          <SignalCard key={index} signal={signal} index={index} />
-        ))}
+      <div ref={cardsRef} className="space-y-12 overflow-hidden w-full">
+        {/* Row 1: Left to Right (Reverse Marquee) */}
+        <div className="relative w-full overflow-hidden">
+          <div className="flex w-max animate-marquee-right hover:[animation-play-state:paused]">
+            {[...signals.slice(0, 4), ...signals.slice(0, 4)].map((signal, index) => (
+              <div key={`row1-${index}`} className="mx-4">
+                <SignalCard signal={signal} index={index % 4} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Row 2: Right to Left (Standard Marquee) - Slower */}
+        <div className="relative w-full overflow-hidden">
+          <div
+            className="flex w-max animate-marquee-left hover:[animation-play-state:paused]"
+            style={{ animationDuration: "60s" }}
+          >
+            {[...signals.slice(4), ...signals.slice(4)].map((signal, index) => (
+              <div key={`row2-${index}`} className="mx-4">
+                <SignalCard signal={signal} index={4 + (index % 4)} />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )
@@ -186,7 +185,7 @@ function SignalCard({
   signal,
   index,
 }: {
-  signal: { date: string; title: string; note: string }
+  signal: { title: string; note: string }
   index: number
 }) {
   return (
@@ -207,7 +206,6 @@ function SignalCard({
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
             No. {String(index + 1).padStart(2, "0")}
           </span>
-          {signal.date && <time className="font-mono text-[10px] text-muted-foreground/60">{signal.date}</time>}
         </div>
 
         {/* Title */}

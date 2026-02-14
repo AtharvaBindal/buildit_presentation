@@ -85,58 +85,70 @@ export function ColophonSection() {
     >
       {/* Section header — id="colophon" is used by the side nav for "CREDITS". */}
       <div ref={headerRef} className="mb-16">
-        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">05 / Colophon</span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">06 / CREDITS</span>
         <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">CREDITS</h2>
       </div>
 
       {/* Multi-column layout — Team, Reviewers, Special Thanks. Add more columns or list items as needed. */}
       <div ref={gridRef} className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 md:gap-12">
-        {/* Team — replace "joe doe" with your team member names. */}
-        <div className="col-span-1">
-          <h4 className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mb-4">Team</h4>
-          <ul className="space-y-2">
-            <li className="font-mono text-xs text-foreground/80">joe doe</li>
+        {/* Team */}
+        <div className="col-span-2">
+          <h4 className="font-mono text-[9px] uppercase tracking-[0.3em] text-accent mb-6">Team</h4>
+          <ul className="space-y-4">
+            <li className="font-mono text-sm text-foreground">
+              ATHARVA BINDAL <span className="text-muted-foreground text-xs ml-2">// LEAD</span>
+            </li>
+            <li className="font-mono text-sm text-foreground">
+              SARTHAK MALHOTRA <span className="text-muted-foreground text-xs ml-2">// LEAD</span>
+            </li>
           </ul>
         </div>
 
-        {/* Reviewers (in video) — people who gave feedback in your review video. */}
-        <div className="col-span-1">
-          <h4 className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mb-4">Reviewers (in video)</h4>
+        {/* Reviewers */}
+        <div className="col-span-2">
+          <h4 className="font-mono text-[9px] uppercase tracking-[0.3em] text-accent mb-6">Reviewers</h4>
           <ul className="space-y-2">
-            <li className="font-mono text-xs text-foreground/80">joe doe</li>
+            <li className="font-mono text-xs text-foreground/80">Akhil Bhaiya</li>
+            <li className="font-mono text-xs text-foreground/80">Nirmal Bhaiya</li>
+            <li className="font-mono text-xs text-foreground/80">Nishant Bhaiya</li>
+            <li className="font-mono text-xs text-foreground/80">Aadi Bhaiya</li>
           </ul>
         </div>
 
-        {/* Special Thanks — mentors, professors, facilitators. */}
-        <div className="col-span-1">
-          <h4 className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mb-4">SPECIAL THANKS TO</h4>
+        {/* Special Thanks */}
+        <div className="col-span-2">
+          <h4 className="font-mono text-[9px] uppercase tracking-[0.3em] text-accent mb-6">SPECIAL THANKS</h4>
           <ul className="space-y-2">
-            <li className="font-mono text-xs text-foreground/80">Professor X</li>
-            <li className="font-mono text-[8px] uppercase tracking-[0.2em] text-muted-foreground/60 mt-2">meet a professor for ideation (mandatory)</li>
+            <li className="font-mono text-xs text-foreground/80">Narendra Modi</li>
+            <li className="font-mono text-xs text-foreground/80">Open Source Community</li>
+            <li className="font-mono text-xs text-foreground/80">Vercel</li>
+            <li className="font-mono text-xs text-foreground/80">Our Early Reviewers</li>
           </ul>
         </div>
       </div>
 
-      {/* Bottom copyright — change the text to your team name and tagline. */}
+      {/* Bottom copyright */}
       <div
         ref={footerRef}
         className="mt-24 pt-8 border-t border-border/20 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
       >
         <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest">
-          FANTASTIC 4 KICKOFF
+          DESIGNED WITH LOVE IN INDIA
         </p>
-        <p className="font-mono text-[10px] text-muted-foreground">lets BUILDIT</p>
+        <p className="font-mono text-[10px] text-muted-foreground">
+          UNIVERSE © 2025. ALL RIGHTS RESERVED.
+        </p>
       </div>
 
-      {/* Feedback Form — replace the href with your actual form link and the label with something like "Give feedback". */}
-      <div className="mt-12 text-center">
+      {/* Feedback / Waitlist Button */}
+      <div className="mt-16 text-center">
         <a
-          href="https://forms.gle/aiyJBKZ4ZMV4EJqS8"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block font-mono text-sm text-foreground hover:text-accent transition-colors duration-200 border border-border/40 px-6 py-3 hover:border-accent"
+          href="#"
+          className="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden font-mono font-medium tracking-tighter text-white bg-gray-800 rounded-lg group"
         >
-          add a form in this button.
+          <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-accent rounded-full group-hover:w-56 group-hover:h-56"></span>
+          <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
+          <span className="relative">JOIN THE WAITLIST</span>
         </a>
       </div>
     </section>
