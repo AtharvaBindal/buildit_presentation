@@ -11,6 +11,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 gsap.registerPlugin(ScrollTrigger)
 
+import { AnimatedNoise } from "@/components/animated-noise"
+
+// ... (existing imports)
+
 export function ColophonSection() {
   const sectionRef = useRef<HTMLElement>(null)
   const headerRef = useRef<HTMLDivElement>(null)
@@ -83,6 +87,7 @@ export function ColophonSection() {
       id="colophon"
       className="relative py-32 pl-6 md:pl-28 pr-6 md:pr-12 border-t border-border/30"
     >
+      <AnimatedNoise opacity={0.05} />
       {/* Section header — id="colophon" is used by the side nav for "CREDITS". */}
       <div ref={headerRef} className="mb-16">
         <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">06 / CREDITS</span>
@@ -100,6 +105,9 @@ export function ColophonSection() {
             </li>
             <li className="font-mono text-sm text-foreground">
               SARTHAK MALHOTRA <span className="text-muted-foreground text-xs ml-2">// LEAD</span>
+            </li>
+            <li className="font-mono text-sm text-foreground/50 border-t border-dashed border-border/50 pt-2 mt-2">
+              YOU? <span className="text-accent text-xs ml-2 cursor-pointer hover:underline">// JOIN CORE TEAM</span>
             </li>
           </ul>
         </div>
