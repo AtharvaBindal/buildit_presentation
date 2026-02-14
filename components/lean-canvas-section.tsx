@@ -254,7 +254,7 @@ export function LeanCanvasSection() {
   const expandedSectionData = getExpandedSection()
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen md:h-screen overflow-y-auto md:overflow-hidden px-4 md:px-6 py-4 md:py-6 bg-background flex flex-col ml-0 md:ml-20">
+    <section ref={sectionRef} className="relative min-h-screen md:h-screen overflow-y-auto md:overflow-hidden px-4 md:px-6 py-4 md:py-6 bg-transparent flex flex-col ml-0 md:ml-20">
       <AnimatedNoise opacity={0.05} />
       {/* Expanded Section Modal */}
       {expandedSection && expandedSectionData && (
