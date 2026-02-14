@@ -144,8 +144,7 @@ export function RevenueSection() {
           scrollRef.current = el
           cardsRef.current = el
         }}
-        className="flex gap-8 overflow-x-auto pb-8 pr-12 scrollbar-hide"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 pb-8 pr-6 md:pr-12"
       >
         {revenueModels.map((model, index) => (
           <RevenueCard key={index} model={model} index={index} />
@@ -171,7 +170,7 @@ function RevenueCard({
   return (
     <article
       className={cn(
-        "group relative flex-shrink-0 w-80 h-[400px]",
+        "group relative flex-shrink-0 w-full h-[400px]",
         "transition-transform duration-500 ease-out",
         "hover:-translate-y-2",
       )}

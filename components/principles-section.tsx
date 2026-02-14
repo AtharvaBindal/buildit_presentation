@@ -41,28 +41,19 @@ export function PrinciplesSection() {
       number: "03",
       titleParts: [
         { text: "CORE 3: ", highlight: false },
-        { text: "WELFARE", highlight: true },
+        { text: "ECONOMY", highlight: true },
       ],
-      description: "Trip Planner for secure travel and Anonymous Grievances for student support.",
+      description: "'Night Market' for verified P2P buying/selling with campus-specific trust scores.",
       align: "left",
     },
     {
       number: "04",
       titleParts: [
         { text: "CORE 4: ", highlight: false },
-        { text: "ECONOMY", highlight: true },
-      ],
-      description: "'Night Market' for verified P2P buying/selling with campus-specific trust scores.",
-      align: "right",
-    },
-    {
-      number: "05",
-      titleParts: [
-        { text: "CORE 5: ", highlight: false },
         { text: "SOCIAL", highlight: true },
       ],
       description: "Club Hub for event discovery and Social Graph to connect with peers and alumni.",
-      align: "left",
+      align: "right",
     },
   ]
 
