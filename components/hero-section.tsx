@@ -74,7 +74,7 @@ export function HeroSection() {
         {/* Wraps the flip-board title and mute button so they can share audio state. */}
         <SplitFlapAudioProvider>
           <div className="relative">
-            <SplitFlapText text="UNIVERSE" speed={80} />
+            <SplitFlapText text="UNIVERSE" speed={80} highlightCount={3} />
             <div className="mt-4">
               <SplitFlapMuteToggle />
             </div>

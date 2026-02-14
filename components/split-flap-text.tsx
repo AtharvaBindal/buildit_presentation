@@ -123,11 +123,12 @@ interface SplitFlapTextProps {
   text: string
   className?: string
   speed?: number
+  highlightCount?: number
 }
 
 const CHARSET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".split("")
 
-function SplitFlapTextInner({ text, className = "", speed = 50 }: SplitFlapTextProps) {
+function SplitFlapTextInner({ text, className = "", speed = 50, highlightCount = 0 }: SplitFlapTextProps) {
   const chars = useMemo(() => text.split(""), [text])
   const [animationKey, setAnimationKey] = useState(0)
   const [hasInitialized, setHasInitialized] = useState(false)
@@ -160,7 +161,7 @@ function SplitFlapTextInner({ text, className = "", speed = 50 }: SplitFlapTextP
           skipEntrance={hasInitialized}
           speed={speed}
           playClick={audio?.playClick}
-          settledColor={char.toUpperCase() === "U" && index === 0 ? "var(--primary)" : undefined}
+          settledColor={index < highlightCount ? "var(--primary)" : undefined}
         />
       ))}
     </div>
