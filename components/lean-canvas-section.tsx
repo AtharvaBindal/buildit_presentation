@@ -200,7 +200,7 @@ export function LeanCanvasSection() {
         scrollTrigger: {
           trigger: headerRef.current,
           start: "top 80%",
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none none",
         },
       })
 
@@ -216,7 +216,7 @@ export function LeanCanvasSection() {
           scrollTrigger: {
             trigger: gridRef.current,
             start: "top 85%",
-            toggleActions: "play none none reverse",
+            toggleActions: "play none none none",
           },
         })
       }
