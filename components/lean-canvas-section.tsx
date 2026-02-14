@@ -254,7 +254,7 @@ export function LeanCanvasSection() {
   const expandedSectionData = getExpandedSection()
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen md:h-screen overflow-y-auto md:overflow-hidden px-4 md:px-6 py-4 md:py-6 bg-transparent flex flex-col ml-0 md:ml-20">
+    <section ref={sectionRef} className="relative min-h-screen w-full px-4 md:px-6 py-8 bg-transparent flex flex-col ml-0 md:ml-20">
       <AnimatedNoise opacity={0.05} />
       {/* Expanded Section Modal */}
       {expandedSection && expandedSectionData && (
@@ -324,7 +324,7 @@ export function LeanCanvasSection() {
       {/* Lean Canvas Grid - 3x3 layout with modern glassmorphism cards */}
       <div
         ref={gridRef}
-        className="flex-1 max-w-full mx-auto grid grid-cols-1 md:grid-cols-5 gap-3 md:gap-4 p-2 md:p-3 overflow-y-auto md:overflow-auto"
+        className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-3 md:gap-4 p-2"
       >
         {/* Helper function for cards */}
         {/* Row 1: Top 5 sections */}
