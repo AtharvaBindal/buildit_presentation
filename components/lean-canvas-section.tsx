@@ -2,12 +2,8 @@
 
 import { useRef, useEffect, useState } from "react"
 import Link from "next/link"
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { X } from "lucide-react"
-import { cn } from "@/lib/utils"
 
-gsap.registerPlugin(ScrollTrigger)
 
 const leanCanvasSections = [
   {
@@ -180,50 +176,12 @@ import { AnimatedNoise } from "@/components/animated-noise"
 
 export function LeanCanvasSection() {
   const sectionRef = useRef<HTMLElement>(null)
-  const headerRef = useRef<HTMLDivElement>(null)
-  const gridRef = useRef<HTMLDivElement>(null)
   const [expandedSection, setExpandedSection] = useState<{
     sectionId: string
     sectionTitle: string
   } | null>(null)
 
-  useEffect(() => {
-    if (!sectionRef.current || !headerRef.current || !gridRef.current) return
 
-    const ctx = gsap.context(() => {
-      // Header fade in
-      gsap.from(headerRef.current, {
-        opacity: 0,
-        y: -20,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: headerRef.current,
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-      })
-
-      // Cards stagger in
-      const cards = gridRef.current?.querySelectorAll(".lean-card")
-      if (cards) {
-        gsap.from(cards, {
-          opacity: 0,
-          y: 40,
-          duration: 0.8,
-          stagger: 0.1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: gridRef.current,
-            start: "top 85%",
-            toggleActions: "play none none none",
-          },
-        })
-      }
-    }, sectionRef)
-
-    return () => ctx.revert()
-  }, [])
 
   // Handle ESC key to close expanded section
   useEffect(() => {
@@ -254,7 +212,7 @@ export function LeanCanvasSection() {
   const expandedSectionData = getExpandedSection()
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen w-full px-4 md:px-6 py-8 bg-transparent flex flex-col ml-0 md:ml-20">
+    <section ref={sectionRef} className="relative min-h-screen w-full px-4 md:px-6 py-8 bg-transparent flex flex-col ml-0 md:ml-20 animate-in fade-in zoom-in-95 duration-1000 slide-in-from-bottom-10">
       <AnimatedNoise opacity={0.05} />
       {/* Expanded Section Modal */}
       {expandedSection && expandedSectionData && (
@@ -309,7 +267,7 @@ export function LeanCanvasSection() {
       )}
 
       {/* Header */}
-      <div ref={headerRef} className="mb-2 md:mb-4 text-center flex-shrink-0">
+      <div className="mb-2 md:mb-4 text-center flex-shrink-0">
         <Link
           href="/"
           className="inline-block mb-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground hover:text-accent transition-colors duration-200"
@@ -323,7 +281,6 @@ export function LeanCanvasSection() {
 
       {/* Lean Canvas Grid - 3x3 layout with modern glassmorphism cards */}
       <div
-        ref={gridRef}
         className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-3 md:gap-4 p-2"
       >
         {/* Helper function for cards */}
